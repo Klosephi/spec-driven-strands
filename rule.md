@@ -149,10 +149,11 @@ project/
 - **MUST** execute existing tests before committing changes
 - **MUST** maintain test coverage above 80%
 
-## AWS Strands Specific Guidelines
-
 ### Agent Implementation
 **Constraints:**
+- **MUST** use Amazon Bedrock as the model provider
+- **MUST** use `us.anthropic.claude-3-7-sonnet-20250219-v1:0` as the model
+- **MUST** deploy to AWS AgentCore runtime
 - **MUST** check PyPI for the latest Strands SDK and tool versions during [Research Phase](#research-phase)
 - **MUST** validate existing Strands tools for the specific task before planning implementation
 - **MUST** use proper Agent initialization with required parameters
