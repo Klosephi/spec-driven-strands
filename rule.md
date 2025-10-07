@@ -8,7 +8,7 @@ This document defines the development standards and practices for building AI ag
 ### Directory Layout
 ```
 project/
-├── infra/           # Infrastructure code (CDK, Terraform, etc.)
+├── infra/           # Infrastructure code (Notebooks for the demo)
 ├── src/
 │   ├── agents/      # Agent implementations
 │   └── tools/       # Custom tools
@@ -35,7 +35,7 @@ project/
 
 ### Strands Development Requirements
 - **MUST** use Strands MCP to understand problem-solving approaches in Strands
-- **MUST** validate if existing Strands tools can solve the problem before creating custom solutions
+- **MUST** validate if existing Strands tools can solve the problem before creating custom solutions. Check here: https://strandsagents.com/latest/documentation/docs/user-guide/concepts/tools/community-tools-package/
 - **MUST** consult Strands documentation through MCP for implementation guidance
 - **MUST** always use the latest version of Strands agents
 
@@ -74,7 +74,7 @@ project/
 1. **MUST** explain the implementation plan before coding
 2. **MUST** document the plan in a `.md` file
 3. **MUST** request user approval before proceeding
-4. **MUST** ensure the plan enforces these rules
+4. **MUST** ensure the plan enforces these rules and respects the Developement workflow and the Infrastructure Management
 5. **MUST** log progress updates in the plan file
 
 ### Change Management
@@ -85,7 +85,7 @@ project/
 
 ## Infrastructure Management
 
-### Deployment Method
+### Deployment method via Jupyter Notebooks
 - **MUST** use Jupyter notebooks for infrastructure changes and deployments
 - **MUST** use boto3 for AWS resource creation and management
 - **MUST** execute all code inline within notebook cells
@@ -113,6 +113,7 @@ project/
 - **SHOULD** implement proper error handling in agent loops
 
 ### Tool Development
+- **MUST** Must validate existing tools before creating a new tool. https://strandsagents.com/latest/documentation/docs/user-guide/concepts/tools/community-tools-package/
 - **MUST** include proper docstrings for tool functions
 - **MUST** use type hints for tool parameters
 - **MUST** follow JSON schema generation requirements
@@ -124,13 +125,6 @@ project/
 - These rules are **MANDATORY** unless explicitly documented exceptions exist
 - All code reviews **MUST** validate compliance with these rules
 - Any rule violations **MUST** be addressed before merging
-
-### Documentation Updates
-- Rules **MAY** be updated based on project evolution
-- All rule changes **MUST** be documented with rationale
-- Team **MUST** be notified of rule changes
-
----
 
 **Version**: 1.0  
 **Last Updated**: 2025-10-07  
