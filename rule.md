@@ -65,6 +65,27 @@ project/
 - **MUST** commit frequently with descriptive messages
 - **MUST** document any rule exceptions with justification
 
+## Infrastructure Management
+
+### Deployment Method
+- **MUST** use Jupyter notebooks for infrastructure changes and deployments
+- **MUST** use boto3 for AWS resource creation and management
+- **MUST** execute all code inline within notebook cells
+- **MUST NOT** use `%%writefile` magic commands to generate separate files
+
+### Deployment Workflow
+- **MUST** call unit tests on previously generated agent code from `src/` directory
+- **MUST** deploy agent code to AWS AgentCore runtime using boto3 in notebook
+- **MUST NOT** contain actual agent implementation code in notebook
+- **MUST** validate deployment success before proceeding
+
+### Notebook Responsibilities
+- **MUST** execute unit tests from `tests/` directory
+- **MUST** package and deploy code from `src/agents/` and `src/tools/`
+- **MUST** handle AWS AgentCore deployment configuration
+- **MUST** implement proper error handling for AWS API calls
+- **SHOULD** log deployment progress and results
+
 ## AWS Strands Specific Guidelines
 
 ### Agent Implementation
