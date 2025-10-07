@@ -28,6 +28,17 @@ project/
 - **MUST** use `uv` as package manager
 - **MUST** maintain `pyproject.toml` for dependencies
 
+### Dependency Management
+- **MUST** ensure all Python dependencies are present in package manager and venv
+- **MUST** add missing dependencies to `pyproject.toml` and install them
+- **MUST** validate dependency compatibility before proceeding with development
+
+### Strands Development Requirements
+- **MUST** use Strands MCP to understand problem-solving approaches in Strands
+- **MUST** validate if existing Strands tools can solve the problem before creating custom solutions
+- **MUST** consult Strands documentation through MCP for implementation guidance
+- **MUST** always use the latest version of Strands agents
+
 ### Code Style
 - **MUST** use Black for code formatting
 - **MUST** enforce 88 character maximum line length
@@ -51,6 +62,13 @@ project/
 - **MUST** apply changes in small, testable chunks
 - **MUST** keep implementations simple (prototyping scenario)
 - **MUST** break down complex features into minimal viable increments
+
+### Code Generation Guidelines
+- **MUST** generate only what was explicitly requested - no more, no less
+- **MUST** be precise in implementation scope
+- **MUST** ask for clarification when requirements are unclear
+- **MUST NOT** make assumptions about unstated requirements
+- **MUST** request additional information when needed
 
 ### Planning Process
 1. **MUST** explain the implementation plan before coding
