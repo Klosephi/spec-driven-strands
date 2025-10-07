@@ -26,6 +26,14 @@ project/
 
 ## Development Workflow
 
+### Research Phase
+**Constraints:**
+- **MUST** conduct research before planning implementation
+- **MUST** check PyPI for latest Strands SDK version and update if needed
+- **MUST** validate existing Strands tools for the specific task using [Strands MCP](#strands-development-requirements)
+- **MUST** research target deployment environment (AWS region, AgentCore capabilities, constraints)
+- **MUST** document research findings before proceeding to planning
+
 ### Incremental Development
 **Constraints:**
 - **MUST** apply changes in small, testable chunks
@@ -42,22 +50,23 @@ project/
 
 ### Planning Process
 **Constraints:**
-1. **MUST** explain the implementation plan before coding
-2. **MUST** document the plan in a `.md` file with the following sections:
+1. **MUST** complete [Research Phase](#research-phase) before planning
+2. **MUST** explain the implementation plan before coding
+3. **MUST** document the plan in a `.md` file with the following sections:
    - **Task Folder Structure**: Define directory layout following [Project Structure](#project-structure) rules
    - **Source Code Generation**: Plan agent and tool implementations per [AWS Strands Guidelines](#aws-strands-specific-guidelines)
    - **Test Generation**: Design test strategy following [Testing Requirements](#testing-requirements)
    - **Deployment Target**: Define target environment and deployment configuration
    - **Deployment Notebook**: Plan infrastructure deployment per [Infrastructure Management](#infrastructure-management) rules using boto3
-3. **MUST** request user approval before proceeding
-4. **MUST** ensure the plan enforces these rules
-5. **MUST** log progress updates in the plan file
+4. **MUST** request user approval before proceeding
+5. **MUST** ensure the plan enforces these rules
+6. **MUST** log progress updates in the plan file
 
 **Required Plan Sections:**
-- **Task Folder Structure**: **MUST** specify which directories (`src/agents/`, `src/tools/`, `tests/`, `infra/`) will be used and how files will be organized
-- **Source Code Generation**: **MUST** outline agent implementation approach following [AWS Strands Guidelines](#aws-strands-specific-guidelines)
+- **Task Folder Structure**: **MUST** specify which directories (`src/agents/`, `src/tools/`, `tests/`, `infra/`) will be used based on research findings
+- **Source Code Generation**: **MUST** outline agent implementation approach following [AWS Strands Guidelines](#aws-strands-specific-guidelines) and incorporating research on existing tools
 - **Test Generation**: **MUST** outline TDD approach with specific test scenarios covering all requirements
-- **Deployment Target**: **MUST** define target AWS environment (region, account, AgentCore configuration) if not previously specified
+- **Deployment Target**: **MUST** define target AWS environment (region, account, AgentCore configuration) based on research
 - **Deployment Notebook**: **MUST** describe notebook structure for calling tests and deploying to AgentCore using boto3 per [Infrastructure Management](#infrastructure-management) rules (inline code execution, no %%writefile)
 
 ### Deployment Target Definition
@@ -144,7 +153,8 @@ project/
 
 ### Agent Implementation
 **Constraints:**
-- **MUST** check PyPI for the latest Strands SDK and tool versions
+- **MUST** check PyPI for the latest Strands SDK and tool versions during [Research Phase](#research-phase)
+- **MUST** validate existing Strands tools for the specific task before planning implementation
 - **MUST** use proper Agent initialization with required parameters
 - **MUST** implement tools using one of three patterns: decorators, class-based, or modules
 - **SHOULD** consider A2A protocol for multi-agent communication
