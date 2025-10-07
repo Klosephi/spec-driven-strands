@@ -108,6 +108,14 @@ project/
 - **MUST** implement proper error handling for AWS API calls
 - **SHOULD** log deployment progress and results
 
+### AgentCore Runtime Deployment
+**Constraints:**
+- **MUST** use `bedrock-agentcore-starter-toolkit` SDK for AgentCore deployments
+- **MUST** call `runtime.configure()` followed by `runtime.launch()` for actual deployment
+- **MUST** validate deployment readiness before launching
+- **MUST** test deployed agent with sample invocations
+- **MUST** include proper error handling for deployment failures
+
 ## Python Development Standards
 
 ### Environment Management
