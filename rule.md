@@ -108,14 +108,6 @@ project/
 - **MUST** implement proper error handling for AWS API calls
 - **SHOULD** log deployment progress and results
 
-### AgentCore Runtime Deployment
-**Constraints:**
-- **MUST** use `bedrock-agentcore-starter-toolkit` SDK for AgentCore deployments
-- **MUST** call `runtime.configure()` followed by `runtime.launch()` for actual deployment
-- **MUST** validate deployment readiness before launching
-- **MUST** test deployed agent with sample invocations
-- **MUST** include proper error handling for deployment failures
-
 ## Python Development Standards
 
 ### Environment Management
@@ -161,13 +153,21 @@ project/
 **Constraints:**
 - **MUST** use Amazon Bedrock as the model provider
 - **MUST** use `us.anthropic.claude-3-7-sonnet-20250219-v1:0` as the model
-- **MUST** deploy to AWS AgentCore runtime
+- **MUST** deploy to [AWS Bedrock AgentCore runtime](#agentcore-runtime-deployment)
 - **MUST** check PyPI for the latest Strands SDK and tool versions during [Research Phase](#research-phase)
 - **MUST** validate existing Strands tools for the specific task before planning implementation
 - **MUST** use proper Agent initialization with required parameters
 - **MUST** implement tools using one of three patterns: decorators, class-based, or modules
 - **SHOULD** consider A2A protocol for multi-agent communication
 - **SHOULD** implement proper error handling in agent loops
+
+### AgentCore Runtime Deployment
+**Constraints:**
+- **SHOULD** use `bedrock-agentcore-starter-toolkit` SDK for AgentCore deployments
+- **MUST** Use the amazon-bedrock-agentcore-mcp-server to understand how to deploy to agentcore and createa ressources
+- **MUST** validate deployment readiness before launching
+- **MUST** test deployed agent with sample invocations
+- **MUST** include proper error handling for deployment failures
 
 ### Tool Development
 **Constraints:**
