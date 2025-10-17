@@ -11,7 +11,7 @@ The rules act as a Development Guide and TDD Coach - providing guidance for gene
 ### Directory Layout
 ```
 project/
-├── infra/           # Infrastructure code (Jupyter notebooks)
+├deploy.ipynb         # Infrastructure code (Jupyter notebooks)
 ├── src/
 │   ├── agents/      # Agent implementations
 │   └── tools/       # Custom tools
@@ -19,7 +19,7 @@ project/
 ```
 
 **Constraints:**
-- `infra/` - **MUST** contain Jupyter notebooks for AWS infrastructure deployment
+- `/` - **MUST** contain Jupyter notebooks for AWS infrastructure deployment
 - `src/agents/` - **MUST** contain Strands agent implementations using SDK patterns
 - `src/tools/` - **MUST** contain custom Python tools (decorators, class-based, modules)
 - `tests/` - **MUST** contain unit and integration tests
