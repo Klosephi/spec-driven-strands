@@ -32,7 +32,7 @@ project/
 - **MUST** check PyPI for latest Strands SDK version and update if needed
 - **MUST** validate existing Strands tools for the specific task using [Strands MCP](#strands-development-requirements)
 - **MUST** research target deployment environment (AWS region, AgentCore capabilities, constraints)
-- **MUST** document research findings before proceeding to planning
+- **MUST** document research findings before proceeding to planning in .md file
 
 ### Incremental Development
 **Constraints:**
@@ -50,7 +50,7 @@ project/
 
 ### Planning Process
 **Constraints:**
-1. **MUST** complete [Research Phase](#research-phase) before planning
+1. **MUST** complete [Research Phase](#research-phase) before planning. Reference the reseach document.
 2. **MUST** explain the implementation plan before coding
 3. **MUST** document the plan in a `.md` file with the following sections:
    - **Task Folder Structure**: Define directory layout following [Project Structure](#project-structure) rules
